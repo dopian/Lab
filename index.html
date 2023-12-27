@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Проект</title>
+    <style>
+
+        body, html{
+            width:100%;
+            height:100%;
+            background-color: #191923;
+            margin: auto
+        }
+        
+        .shrift, .button, .golovna, .pronas, .kontakti, .login{
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        header {
+            width: 100%;
+            height: 100x;
+
+        }
+        .square{
+            width: 25%;
+            height: 74.5%;
+            background-color: white;
+            border: 1px solid black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            text-align: center;
+
+        }
+        .button{
+            width: 100%;
+            height: 15%;
+            border: none;
+            background-color: #145caf;
+            font-size: larger;
+            color: white;
+            cursor: pointer;
+            
+            
+        }
+        .golovna, .pronas, .kontakti{
+            font-size: large;
+            color: white;
+            font-weight: 700;
+            text-decoration: none;
+        }
+        .login{
+            width: 100px;
+            height: 50px;
+            background-color: rgb(30, 118, 201);
+            border-radius: 10%;
+            border: none;
+            cursor: pointer;
+            color: white;
+            font-size: medium;
+        }
+        .press-button:active {
+            transform: scale(0.97);
+        }
+        .press-button:hover {
+            background-color: #2980b9;
+        }   
+        .golovna:hover{
+            color: #9D75CB;
+        }
+        .pronas:hover{
+            color: #9D75CB;
+        } 
+        .kontakti:hover{
+            color: #9D75CB;
+        } 
+        main{
+            width: 100%;
+            height: 80%;
+            margin-top: 8%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 50px;
+        }
+        
+        .square_none{
+            width:6%;
+            height:80%;
+        }
+
+        footer{
+            width: 100%;
+            margin-top: 5px;
+            height: 100px;
+        }
+
+        .content{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .sale::before{
+            content: "Sale 13%";
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: white;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            border: 1px solid gray;
+            background-color: red;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: -14%;
+            margin-top: -2%;
+        }
+
+        .drop-down {
+            display: none;
+            background-color: rgb(30, 118, 201);
+            border: none;
+            color: white;
+            height: 70px;
+            width: 150px;
+            font-weight: 500;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: medium;
+            cursor: pointer;
+        }
+        
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            margin-left: 70%;
+            margin-top: 1.5%;
+        }
+
+        .dropdown-child {
+            display: none;
+            background-color: rgb(43, 42, 42);
+            min-width: 200px;
+            position: absolute;
+        }
+        
+        .dropdown:hover .dropdown-child {
+            display: block;
+        }
+
+
+         .dropdown-child a {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+            padding: 20px;
+            text-decoration: none;
+            display: none;
+        }
+
+            
+        @media only screen and (min-width: 400px) and (max-width: 768px) {
+                .square_none, .golovna, .kontakti, .pronas {
+                    display: none;
+            }
+                .square {
+                    width: 70%;
+                    height: auto;
+                    margin-bottom: 20px;
+             }
+                .button {
+                    width: 100%; 
+             }
+                .sale::before{
+                    margin-left: -40%;
+                    margin-top: -4%;
+                }
+                .drop-down{
+                    display: block;
+                }
+
+                .dropdown-child a {
+                    display: block;
+                }
+
+                .login{
+                    display: none;
+                }
+
+                .logotip{
+                    margin-right: 70%;
+                }
+        }
+
+        @media only screen and (min-width: 769px) and (max-width: 960px) {
+                .square_none {
+                    display: none;
+            }
+                .square{
+                    width: 40%;
+                    height: auto; 
+                    margin-bottom: 20px; 
+            }
+                .button {
+                    width: 100%; 
+            }
+                .sale::before{
+                    margin-left: -24%;
+                    margin-top: -3%;
+                }
+
+        }
+
+
+        .square:hover{
+            opacity: 80%;
+        }
+
+        .top_menu{
+            width: 100%;
+            height:10%;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            background-color: #111118;
+            position:absolute;
+            top:0;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+
+        <div class="top_menu">
+            <img class="logotip" width="90px" src="https://cdn-icons-png.flaticon.com/512/10942/10942141.png">
+            <a class="golovna" href="#">Головна</a>
+            <a class="pronas" href="#">Про нас</a>
+            <a class="kontakti" href="#">Контакти</a>
+
+
+            
+
+
+            <button class="login press-button">Login</button>
+        </div>
+
+        <div class="dropdown">
+            <button class="drop-down"> 
+                Меню
+            </button>
+
+            <div class="dropdown-child">
+                <a href=>Головна</a>
+                <a href=>Про нас</a>
+                <a href=>Контакти</a>
+                <a href=>Логін</a>
+            </div>
+        </div>
+
+    </header>
+
+    <main> 
+
+        <div class="square_none">
+
+        </div>
+
+        <div class="square">
+
+            <img width="100%" src="https://onedeal.com.ua/wp-content/uploads/2021/01/1133.jpg"  class="img">
+                <div class="content">
+                    <h2 class="shrift">Стрибок з парашутом (90<кг)</h3>
+                    <p class="shrift">Неперевершений стрибок з парашутом який ніколи не забудеться Включає в себе: Інструктаж, Екіпіровку, Тандем-стрибок</p>
+                    <h1 class="shrift">5000грн</h1>
+                </div>
+            <button class="button press-button">Замовити</button>
+
+        </div>
+
+        <div class="square">
+
+            <img width="100%" src="https://onedeal.com.ua/wp-content/uploads/2021/01/1133.jpg"  class="img">
+                <div class="content">
+                    <h2 class="shrift">Стрибок з парашутом (90-110кг)</h3>
+                    <p class="shrift">Неперевершений стрибок з парашутом який ніколи не забудеться Включає в себе: Інструктаж, Екіпіровку, Тандем-стрибок</p>
+                    <h1 class="shrift">5500грн</h1>
+                </div>
+            <button class="button press-button">Замовити</button>
+
+        </div>
+
+        <div class="square">
+            <img width="100%" src="https://onedeal.com.ua/wp-content/uploads/2021/01/1133.jpg"  class="img">
+                <div class="content">
+                    <h2 class="shrift">Стрибок з парашутом (110+ кг)</h3>
+                    <p class="shrift">Неперевершений стрибок з парашутом який ніколи не забудеться Включає в себе: Інструктаж, Екіпіровку, Тандем-стрибок</p>
+                    <h1 class="shrift">6000грн</h1>
+                </div>
+            <button class="button press-button">Замовити</button>
+        </div>
+
+        <div class="square_none">
+
+        </div>
+
+        <div class="square_none">
+
+        </div>
+
+        <div class="square">
+            <img width="100%" src="https://onedeal.com.ua/wp-content/uploads/2021/01/1133.jpg"  class="img">
+                <div class="content">
+                    <h2 class="shrift">Зйомка GoPro</h3>
+                    <p class="shrift">Відео, зняте вашим тандем-майстром камерою на зап'ясті руки (GoPro), воно збереже всі ваші емоції від стрибка з парашутом від початку і до кінця.</p>
+                    <h1 class="shrift">600грн</h1>
+                </div>
+            <button class="button press-button">Замовити</button>
+        </div>
+
+        <div class="square">
+            <img width="100%" src="https://onedeal.com.ua/wp-content/uploads/2021/01/1133.jpg"  class="img">
+                <div class="content">
+                    <h2 class="shrift">Відеооператор</h3>
+                    <p class="shrift">Відео, зняте окремим оператором, знімає весь ваш досвід тандем-стрибка з парашутом з моменту посадки в літак. Ви отримаєте відео і цифрові фото високої якості.</p>
+                    <h1 class="shrift">1700грн</h1>
+                </div>
+            <button class="button press-button">Замовити</button>
+        </div>
+
+        <div class="square">
+                <div class="content">
+                    <div class="sale"></div>
+                    <img width="100%" src="https://onedeal.com.ua/wp-content/uploads/2021/01/1133.jpg"  class="img">
+                    <h2 class="shrift">Повний відеопакет</h3>
+                    <p class="shrift">Відео, зняте тандем-майстром на GoPro і відеооператором, закарбує ваш незабутній стрибок з усіх ракурсів + Фотографії високої якості!</p>
+                    <h1 class="shrift">2000грн</h1>
+                </div>
+            <button class="button press-button">Замовити</button>
+        </div>
+
+        <div class="square_none">
+
+        </div>
+
+    </main>
+
+    <footer>
+
+    </footer>
+
+    <section></section>
+    <article></article>
+</body>
+</html>
+
+	    
